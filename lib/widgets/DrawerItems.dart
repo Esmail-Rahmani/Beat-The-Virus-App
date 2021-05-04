@@ -1,5 +1,4 @@
-import 'package:beat_the_virus/screens/Careers.dart';
-import 'package:beat_the_virus/screens/ProductsPage.dart';
+import 'package:beat_the_virus/screens/Team.dart';
 import 'package:flutter/material.dart';
 import 'package:beat_the_virus/main.dart';
 import 'package:beat_the_virus/screens/Services.dart';
@@ -42,7 +41,8 @@ class _DrawerItemsState extends State<DrawerItems> {
           leading: FaIcon(FontAwesomeIcons.addressCard, color: Colors.black),
           title: Text('ABOUT')),
       ListTile(
-          onTap: () {},
+          onTap: () => Navigator.of(context)
+              .push(MaterialPageRoute(builder: (ctc) => Team())),
           leading: FaIcon(FontAwesomeIcons.users, color: Colors.black),
           title: Text('TEAM')),
       ListTile(
@@ -57,13 +57,11 @@ class _DrawerItemsState extends State<DrawerItems> {
           leading: FaIcon(FontAwesomeIcons.addressBook, color: Colors.black),
           title: Text('CONTACT')),
       ListTile(
-          onTap: () => Navigator.of(context)
-              .push(MaterialPageRoute(builder: (ctc) => Careers())),
+          onTap: () {},
           leading: FaIcon(FontAwesomeIcons.userGraduate, color: Colors.black),
           title: Text('CAREERS')),
       ListTile(
-          onTap: () => Navigator.of(context)
-              .push(MaterialPageRoute(builder: (ctc) => Products())),
+          onTap: () {},
           leading: FaIcon(FontAwesomeIcons.shoppingCart, color: Colors.black),
           title: Text('PRODUCT')),
       ListTile(
@@ -82,34 +80,33 @@ class _DrawerItemsState extends State<DrawerItems> {
                       style: TextStyle(fontSize: 20, color: Colors.grey),
                       textAlign: TextAlign.center)),
               Padding(
-                  padding: const EdgeInsets.only(top: 5.0, bottom: 8.0),
+                  padding: const EdgeInsets.symmetric(vertical: 5.0),
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
-                        IconButton(
-                            padding: EdgeInsets.zero,
-                            icon: FaIcon(FontAwesomeIcons.facebook, size: 48),
-                            onPressed: () {}),
-                        IconButton(
-                            padding: EdgeInsets.zero,
-                            icon: FaIcon(FontAwesomeIcons.instagramSquare,
-                                size: 48),
-                            onPressed: () {}),
-                        IconButton(
-                            padding: EdgeInsets.zero,
-                            icon: FaIcon(FontAwesomeIcons.youtube, size: 48),
-                            onPressed: () {}),
-                        IconButton(
-                            padding: EdgeInsets.zero,
-                            icon: FaIcon(FontAwesomeIcons.twitter, size: 48),
-                            onPressed: () {}),
-                        IconButton(
-                            padding: EdgeInsets.zero,
-                            icon: FaIcon(FontAwesomeIcons.google, size: 48),
-                            onPressed: () {})
+                        InkWell(
+                            onTap: () {},
+                            child: FaIcon(FontAwesomeIcons.facebook,
+                                color: Colors.black, size: 50)),
+                        InkWell(
+                            onTap: () {},
+                            child: FaIcon(FontAwesomeIcons.twitter,
+                                color: Colors.black, size: 50)),
+                        InkWell(
+                            onTap: () {},
+                            child: FaIcon(FontAwesomeIcons.youtube,
+                                color: Colors.black, size: 50)),
+                        InkWell(
+                            onTap: () {},
+                            child: FaIcon(FontAwesomeIcons.instagram,
+                                color: Colors.black, size: 50)),
+                        InkWell(
+                            onTap: () {},
+                            child: FaIcon(FontAwesomeIcons.google,
+                                color: Colors.black, size: 50))
                       ]))
             ]),
-            Image(image: AssetImage('assets/icons/btvlogolow.png'), height: 120)
+            Image(image: AssetImage('assets/icons/btvlogo.png'), height: 120)
           ])
     ]));
   }
